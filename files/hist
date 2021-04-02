@@ -1,0 +1,9 @@
+#!/bin/bash
+# mkdir history directory
+cdir(){
+    mkdir /var/log/history
+    chmod 1777 /var/log/history
+}
+test -d /var/log/history  || cdir
+chattr +a /var/log/history/*.log
+chattr +a /root/.bash_history
